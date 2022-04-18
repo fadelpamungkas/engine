@@ -10,7 +10,7 @@ import (
 )
 
 func Connect(c models.DatabaseConfig) (*mongo.Database, error) {
-	clientOptions := options.Client().ApplyURI(c.URI[1])
+	clientOptions := options.Client().ApplyURI(c.URI[2])
 	client, err := mongo.NewClient(clientOptions)
 	if err != nil {
 		return nil, err

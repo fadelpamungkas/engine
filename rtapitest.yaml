@@ -1,0 +1,9 @@
+- target:
+    url: http://127.0.0.1:8000
+    method: GET
+  query_parameters:
+    threads: 2
+    max_threads: 2
+    connections: 12
+    duration: 10s
+    request_rate: 500
