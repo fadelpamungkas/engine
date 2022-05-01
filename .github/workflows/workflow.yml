@@ -23,6 +23,18 @@ jobs:
       - name: Test
         run: go test -v ./...
 
+      - name: "Create env file"
+        run: |
+          touch env.yaml
+          cat << EOT >> env.yaml
+          port: ${{ secrets.PORT }}
+          database:
+            mongo_timeout: ${{ secrets.MONGO_TIMEOUT }}
+            mongo_db_name: ${{ secrets.MONGO_DB_NAME }}
+            mongo_uri: ${{ secrets.MONGO_URI }}
+          EOT
+          cat .env
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
 

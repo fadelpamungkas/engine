@@ -7,10 +7,6 @@ import (
 	"github.com/engine/repository"
 )
 
-type UsecaseI interface {
-	Get(ctx context.Context) (models.Response, error)
-}
-
 type Usecase struct {
 	repo repository.RepositoryI
 }

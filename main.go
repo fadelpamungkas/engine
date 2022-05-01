@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/engine/configs"
-	"github.com/engine/delivery/route"
+	"github.com/engine/delivery/handler"
 	"github.com/engine/repository"
 	"github.com/engine/usecase"
 	"github.com/gofiber/fiber/v2"
@@ -28,7 +28,7 @@ func main() {
 
 	repo := repository.NewRepository(mongo)
 	uc := usecase.NewUsecase(repo)
-	route.Routes(app, uc)
+	handler.Routes(app, uc)
 
 	port := os.Getenv("PORT")
 	if port == "" {
