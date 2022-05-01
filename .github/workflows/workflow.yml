@@ -62,5 +62,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
+          platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
-          tags: fadelpm/engine-multi:latest
+          tags: fadelpm/engine-multi:latest,fadelpm/engine-multi:release-2
+
+      - name: Inspect Docker image
+        run: |
+          docker image inspect fadelpm/engine-multi:latest
