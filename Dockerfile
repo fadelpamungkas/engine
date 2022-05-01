@@ -7,8 +7,6 @@ RUN go build -o server main.go
 FROM alpine:3.10
 WORKDIR /app
 COPY --from=build /app/server .
-COPY --from=build /app/env.yaml .
-
 
 EXPOSE 8000
 
