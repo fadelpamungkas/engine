@@ -1,6 +1,7 @@
 package models
 
 type Response struct {
-	Message     string       `json:"message"`
-	Restaurants []Restaurant `json:"restaurants"`
+	Status  int         `json:"status" validate:"required"`
+	Message string      `json:"message" validate:"required"`
+	Data    interface{} `json:"data" validate:"required"`
 }

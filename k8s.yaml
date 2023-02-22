@@ -27,4 +27,4 @@ spec:
     spec:
       containers:
         - name: engine-api
-          image: fadelpm/engine-multi:release-1
+          image: fadelpm/engine-multi:latest
